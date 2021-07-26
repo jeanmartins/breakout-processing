@@ -1,4 +1,5 @@
 Bola bola = new Bola();
+Jogador jogador = new Jogador();
 void setup() {
   size(600, 600);
 }
@@ -7,6 +8,7 @@ void draw() {
   background(0);
   bola.desenhaBola();
   bola.moverBola();
+  jogador.desenhaMove();
 }
 
 class Bola {
@@ -38,16 +40,22 @@ class Bola {
     }
   }
 }
-class Jogador{
- float posicaoJogadorX, posicaoJogadorY, larguraJogador, alturaJogador; 
-  Jogador(){
-   this.posicaoJogadorX = 550;
-   this.posicaoJogadorY = mouseY;
-   this.larguraJogador = 100;
-   this.alturaJogador = 20;
-  }
-  void desenhaMove(){
-   rect(this.posicaoJogadorX,this.posicaoJogadorY,this.larguraJogador,this.alturaJogador); 
+class Jogador {
+  float posicaoJogadorX, posicaoJogadorY, larguraJogador, alturaJogador; 
+  Jogador() {
     
+    this.posicaoJogadorY = 550;
+    this.larguraJogador = 100;
+    this.alturaJogador = 20;
   }
+  void desenhaMove() {
+    rect(this.posicaoJogadorX, this.posicaoJogadorY, this.larguraJogador, this.alturaJogador);
+     if (keyPressed){
+     if( (keyCode == LEFT) && (this.posicaoJogadorX >=0))
+       this.posicaoJogadorX-= 7;
+    if ( (keyCode == RIGHT) && (this.posicaoJogadorX <=width-larguraJogador))
+       this.posicaoJogadorX+=7;
+  }
+  }
+  
 }
