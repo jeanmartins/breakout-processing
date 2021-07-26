@@ -1,9 +1,9 @@
 class Bola {
-  float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY;
+  float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY;
   Bola() {
     this.posicaoBolaX = 100;
     this.posicaoBolaY = 100;
-    this.aceleracaoX = random(-5, 5);
+    this.aceleracaoX = 5;
     this.aceleracaoY = random(-5, 5);
   }
   void desenhaBola() {
@@ -24,6 +24,16 @@ class Bola {
     }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;
+    }
+  }
+  void colisao(Jogador outro) {
+    testarColisaoX = this.posicaoBolaX;
+    testarColisaoY = this.posicaoBolaY;
+
+    if (this.posicaoBolaX < outro.posicaoJogadorX) {
+      testarColisaoX = outro.posicaoJogadorX;
+    } else if (this.posicaoBolaX > outro.posicaoJogadorX + outro.larguraJogador) {
+      testarColisaoX = outro.posicaoJogadorX + outro.larguraJogador;
     }
   }
 }

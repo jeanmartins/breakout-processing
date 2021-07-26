@@ -8,5 +8,6 @@ void draw() {
   background(0);
   bola.desenhaBola();
   bola.moverBola();
+  bola.colisao(jogador);
   jogador.desenhaMove();
 }
