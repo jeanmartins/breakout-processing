@@ -38,3 +38,16 @@ class Bola {
     }
   }
 }
+class Jogador{
+ float posicaoJogadorX, posicaoJogadorY, larguraJogador, alturaJogador; 
+  Jogador(){
+   this.posicaoJogadorX = 550;
+   this.posicaoJogadorY = mouseY;
+   this.larguraJogador = 100;
+   this.alturaJogador = 20;
+  }
+  void desenhaMove(){
+   rect(this.posicaoJogadorX,this.posicaoJogadorY,this.larguraJogador,this.alturaJogador); 
+    
+  }
+}
