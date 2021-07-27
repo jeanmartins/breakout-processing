@@ -1,13 +1,14 @@
 class Bola {
-  float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY;
+  float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
   Bola() {
     this.posicaoBolaX = 100;
     this.posicaoBolaY = 100;
     this.aceleracaoX = 5;
     this.aceleracaoY = random(-5, 5);
+    this.raio = 10;
   }
   void desenhaBola() {
-    circle(this.posicaoBolaX, this.posicaoBolaY, 20);
+    circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
   }
   void moverBola() {
     this.posicaoBolaX+=this.aceleracaoX;
@@ -34,6 +35,17 @@ class Bola {
       testarColisaoX = outro.posicaoJogadorX;
     } else if (this.posicaoBolaX > outro.posicaoJogadorX + outro.larguraJogador) {
       testarColisaoX = outro.posicaoJogadorX + outro.larguraJogador;
+    }
+
+    if (this.posicaoBolaY < outro.posicaoJogadorY) {
+      testarColisaoY = outro.posicaoJogadorY;
+    } else if (this.posicaoBolaY > outro.posicaoJogadorY + outro.alturaJogador) {
+      testarColisaoY =  outro.posicaoJogadorY + outro.alturaJogador;
+    }
+    this.distancia = sqrt(sq(this.posicaoBolaX - testarColisaoX) + sq(this.posicaoBolaY - testarColisaoY));
+
+    if ( this.distancia <= this.raio) {
+      this.aceleracaoY = -5;
     }
   }
 }
