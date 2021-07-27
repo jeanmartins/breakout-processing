@@ -11,3 +11,4 @@ void draw() {
   bola.colisao(jogador);
   jogador.desenhaMove();
 }
+//
