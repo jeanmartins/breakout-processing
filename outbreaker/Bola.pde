@@ -48,25 +48,4 @@ class Bola {
       this.aceleracaoY = -5;
     }
   }
-  void colisao(Barras outro) {
-    testarColisaoX = this.posicaoBolaX;
-    testarColisaoY = this.posicaoBolaY;
-
-    if (this.posicaoBolaX < outro.posicaoBarraX) {
-      testarColisaoX = outro.posicaoBarraX;
-    } else if (this.posicaoBolaX > outro.posicaoBarraX + outro.larguraBarra) {
-      testarColisaoX = outro.posicaoBarraX + outro.larguraBarra;
-    }
-
-    if (this.posicaoBolaY < outro.posicaoBarraY) {
-      testarColisaoY = outro.posicaoBarraY;
-    } else if (this.posicaoBolaY > outro.posicaoBarraY + outro.alturaBarra) {
-      testarColisaoY =  outro.posicaoBarraY + outro.alturaBarra;
-    }
-    this.distancia = sqrt(sq(this.posicaoBolaX - testarColisaoX) + sq(this.posicaoBolaY - testarColisaoY));
-
-    if ( this.distancia <= this.raio) {
-      score+=1;
-    }
-  }
 }
