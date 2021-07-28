@@ -15,6 +15,7 @@ class Barras {
     }
   }
   void colisao(Bola outro) {
+    if (estaVivo == true) {
     testarColisaoX = outro.posicaoBolaX;
     testarColisaoY = outro.posicaoBolaY;
 
@@ -30,9 +31,12 @@ class Barras {
       testarColisaoY =  this.posicaoBarraY + this.alturaBarra;
     }
     this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
-
+    
     if ( this.distancia <= outro.raio) {
       estaVivo = false;
+      outro.aceleracaoY = 5;
+      score+=1;
+    }
     }
   }
 }
