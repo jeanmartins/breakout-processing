@@ -21,6 +21,5 @@ void draw() {
   }
   for (int contador = 1; contador<barras.length; contador++) {
     barras[contador].colisao(bola);
-    //bola.colisao(barras[contador]);
   }
 }

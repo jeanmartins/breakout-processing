@@ -16,27 +16,27 @@ class Barras {
   }
   void colisao(Bola outro) {
     if (estaVivo == true) {
-    testarColisaoX = outro.posicaoBolaX;
-    testarColisaoY = outro.posicaoBolaY;
+      testarColisaoX = outro.posicaoBolaX;
+      testarColisaoY = outro.posicaoBolaY;
 
-    if (outro.posicaoBolaX < this.posicaoBarraX) {
-      testarColisaoX = this.posicaoBarraX;
-    } else if (outro.posicaoBolaX > this.posicaoBarraX + this.larguraBarra) {
-      testarColisaoX = this.posicaoBarraX + this.larguraBarra;
-    }
+      if (outro.posicaoBolaX < this.posicaoBarraX) {
+        testarColisaoX = this.posicaoBarraX;
+      } else if (outro.posicaoBolaX > this.posicaoBarraX + this.larguraBarra) {
+        testarColisaoX = this.posicaoBarraX + this.larguraBarra;
+      }
 
-    if (outro.posicaoBolaY < this.posicaoBarraY) {
-      testarColisaoY = this.posicaoBarraY;
-    } else if (outro.posicaoBolaY > this.posicaoBarraY + this.alturaBarra) {
-      testarColisaoY =  this.posicaoBarraY + this.alturaBarra;
-    }
-    this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
-    
-    if ( this.distancia <= outro.raio) {
-      estaVivo = false;
-      outro.aceleracaoY = 5;
-      score+=1;
-    }
+      if (outro.posicaoBolaY < this.posicaoBarraY) {
+        testarColisaoY = this.posicaoBarraY;
+      } else if (outro.posicaoBolaY > this.posicaoBarraY + this.alturaBarra) {
+        testarColisaoY =  this.posicaoBarraY + this.alturaBarra;
+      }
+      this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
+
+      if ( this.distancia <= outro.raio) {
+        estaVivo = false;
+        outro.aceleracaoY = 5;
+        score+=1;
+      }
     }
   }
 }
