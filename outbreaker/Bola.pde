@@ -66,7 +66,6 @@ class Bola {
     this.distancia = sqrt(sq(this.posicaoBolaX - testarColisaoX) + sq(this.posicaoBolaY - testarColisaoY));
 
     if ( this.distancia <= this.raio) {
-      estaVivo = false;
       score+=1;
     }
   }
