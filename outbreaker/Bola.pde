@@ -64,7 +64,10 @@ class Bola {
     this.distancia = sqrt(sq(this.posicaoBolaX - testarColisaoX) + sq(this.posicaoBolaY - testarColisaoY));
 
     if ( this.distancia <= this.raio) {
-      this.aceleracaoY = -5;
+      this.aceleracaoY = 5;
+      if (testarColisaoY == outro.posicaoJogadorY) {
+        this.aceleracaoY = -5;
+      }
     }
   }
 }

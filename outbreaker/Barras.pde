@@ -34,9 +34,12 @@ class Barras {
       this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
 
       if ( this.distancia <= outro.raio) {
-        estaVivo = false;
+        estaVivo = false; 
         outro.aceleracaoY = 5;
         score+=1;
+        if (testarColisaoY == this.posicaoBarraY) {
+          outro.aceleracaoY = -5;
+        }
       }
     }
     if (jogoAcabou ==true)
