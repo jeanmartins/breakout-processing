@@ -1,15 +1,16 @@
 class Barras {
   float posicaoBarraX, posicaoBarraY, larguraBarra, alturaBarra, testarColisaoX, testarColisaoY, distancia;
   boolean estaVivo;
-  Barras(int posicaoTempX) {
+  Barras(int posicaoTempX, int posicaoTempY) {
     this.posicaoBarraX = posicaoTempX;
-    this.posicaoBarraY = 300;
+    this.posicaoBarraY = posicaoTempY;
     this.larguraBarra = 60;
     this.alturaBarra = 20;
     estaVivo = true;
   }
 
   void desenhaBarra() {
+    stroke(1);
     if (estaVivo == true) {
       rect(this.posicaoBarraX, this.posicaoBarraY, this.larguraBarra, this.alturaBarra);
     }

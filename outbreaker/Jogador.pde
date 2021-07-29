@@ -7,6 +7,7 @@ class Jogador {
     this.alturaJogador = 20;
   }
   void desenhaMove() {
+    stroke(1);
     rect(this.posicaoJogadorX, this.posicaoJogadorY, this.larguraJogador, this.alturaJogador);
     if (keyPressed) {
       if ( (keyCode == LEFT) && (this.posicaoJogadorX >=0))

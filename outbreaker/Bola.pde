@@ -2,12 +2,15 @@ class Bola {
   float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
   Bola() {
     this.posicaoBolaX = 100;
-    this.posicaoBolaY = 100;
+    this.posicaoBolaY = 300;
     this.aceleracaoX = 5;
     this.aceleracaoY = random(-5, 5);
     this.raio = 10;
   }
   void desenhaBola() {
+    noStroke();
+    text(vida, 400, 50);
+    fill(255);
     circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
   }
   void moverBola() {
@@ -21,7 +24,11 @@ class Bola {
     this.posicaoBolaY+=this.aceleracaoY;
     this.aceleracaoY+= 0.01;
     if (this.posicaoBolaY >= height) {
-      this.aceleracaoY = -abs(this.aceleracaoY);
+      vida-=1;
+      posicaoBolaY=300;
+      if (vida ==0) {
+        jogoAcabou =true;
+      }
     }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;
