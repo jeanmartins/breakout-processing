@@ -10,7 +10,7 @@ class Barras {
   }
 
   void desenhaBarra() {
-    stroke(1);
+    noStroke();
     if (estaVivo == true) {
       rect(this.posicaoBarraX, this.posicaoBarraY, this.larguraBarra, this.alturaBarra);
     }
@@ -39,6 +39,7 @@ class Barras {
         score+=1;
       }
     }
-    if (jogoAcabou ==true)estaVivo=true;
+    if (jogoAcabou ==true)
+      estaVivo=true;
   }
 }

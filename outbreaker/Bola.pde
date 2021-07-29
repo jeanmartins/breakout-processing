@@ -37,7 +37,7 @@ class Bola {
     this.aceleracaoY+= 0.01;
     if (this.posicaoBolaY >= height) {
       vida-=1;
-      posicaoBolaY=300;
+      naoComecou=true;
       if (vida ==0) {
         jogoAcabou =true;
       }
