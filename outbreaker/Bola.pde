@@ -38,12 +38,15 @@ class Bola {
     if (this.posicaoBolaY >= height) {
       vida-=1;
       naoComecou=true;
-      if (vida ==0 | jogoVenceu == true) {
+      if (vida ==0) {
         jogoAcabou =true;
       }
     }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;
+    }
+    if (jogoVenceu == true) {
+      jogoAcabou = true;
     }
   }
   void colisao(Jogador outro) {

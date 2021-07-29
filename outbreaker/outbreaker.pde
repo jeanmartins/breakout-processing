@@ -9,7 +9,7 @@ void setup() {
   size(600, 600);
   for (int contador = 0; contador<barras.length; contador++) {
     for (int contadorJ = 0; contadorJ<barras[7].length; contadorJ++) {
-      barras[contador][contadorJ] = new Barras(contador*60, (20*contadorJ)+120);
+      barras[contador][contadorJ] = new Barras(contador*60, (20*contadorJ)+80);
     }
   }
 }
@@ -31,10 +31,9 @@ void draw() {
     }
   }
   if (jogoAcabou == true) {
-    if(jogoVenceu ==false){
-    text("Game Over", 210, 250);
-    }
-    else {
+    if (jogoVenceu ==false) {
+      text("Game Over", 210, 250);
+    } else {
       text("Você venceu", 210, 250);
     }
     text("Score:" + score, 230, 50);
@@ -48,7 +47,7 @@ void draw() {
       score=0;
     }
   }
-  if(score==1){
-   jogoVenceu=true; 
+  if (score==60) {
+    jogoVenceu=true;
   }
 }
