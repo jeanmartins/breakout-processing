@@ -2,7 +2,7 @@ Jogador jogador = new Jogador();
 Bola bola = new Bola(jogador);
 Barras[][] barras = new Barras[10][7];
 int score, vida;
-boolean jogoAcabou = false;
+boolean jogoAcabou, jogoVenceu = false;
 boolean naoComecou = true;
 void setup() {
   vida = 2;
@@ -20,7 +20,6 @@ void draw() {
     textSize(40);
     text(score, 270, 50);
     bola.desenhaBola(jogador);
-    //bola.moverBola();
     bola.colisao(jogador);
     jogador.desenhaMove();
     for (int contador = 0; contador<barras.length; contador++) {
@@ -32,15 +31,24 @@ void draw() {
     }
   }
   if (jogoAcabou == true) {
+    if(jogoVenceu ==false){
     text("Game Over", 210, 250);
+    }
+    else {
+      text("Você venceu", 210, 250);
+    }
     text("Score:" + score, 230, 50);
     text("Pressione na tela", 150, 380);
     text("para recomeçar", 150, 440);
     if (mousePressed == true) {
       jogoAcabou = false;
       naoComecou = true;
+      jogoVenceu = false; 
       vida=2;
       score=0;
     }
+  }
+  if(score==1){
+   jogoVenceu=true; 
   }
 }

@@ -38,7 +38,7 @@ class Bola {
     if (this.posicaoBolaY >= height) {
       vida-=1;
       naoComecou=true;
-      if (vida ==0) {
+      if (vida ==0 | jogoVenceu == true) {
         jogoAcabou =true;
       }
     }
