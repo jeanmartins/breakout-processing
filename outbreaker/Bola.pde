@@ -1,17 +1,29 @@
 class Bola {
   float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
-  Bola() {
-    this.posicaoBolaX = 100;
-    this.posicaoBolaY = 300;
+  Bola(Jogador outro) {
+    this.posicaoBolaX = outro.posicaoJogadorX;
+    this.posicaoBolaY = outro.posicaoJogadorY;
     this.aceleracaoX = 5;
-    this.aceleracaoY = random(-5, 5);
+    this.aceleracaoY = 3;
     this.raio = 10;
   }
-  void desenhaBola() {
+  void desenhaBola(Jogador outro) {
     noStroke();
+    if (naoComecou==true) {
+      this.posicaoBolaX = outro.posicaoJogadorX+50;
+      this.posicaoBolaY = outro.posicaoJogadorY-10;
+    }
     text(vida, 400, 50);
     fill(255);
     circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
+    if (naoComecou == false) {
+      moverBola();
+    }
+    if (keyPressed ==true) {
+      if (keyCode == UP) {
+        naoComecou = false;
+      }
+    }
   }
   void moverBola() {
     this.posicaoBolaX+=this.aceleracaoX;

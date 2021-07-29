@@ -1,7 +1,6 @@
 class Jogador {
   float posicaoJogadorX, posicaoJogadorY, larguraJogador, alturaJogador; 
   Jogador() {
-
     this.posicaoJogadorY = 550;
     this.larguraJogador = 100;
     this.alturaJogador = 20;

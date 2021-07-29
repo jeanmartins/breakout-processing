@@ -39,5 +39,6 @@ class Barras {
         score+=1;
       }
     }
+    if (jogoAcabou ==true)estaVivo=true;
   }
 }
