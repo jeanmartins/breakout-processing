@@ -1,8 +1,4 @@
-
 Jogador jogador = new Jogador();
-
-Bola teste = new Bola(jogador);
-
 Bola bola = new Bola(jogador);
 Barras[][] barras = new Barras[10][7];
 int score, vida;
@@ -53,12 +49,4 @@ void draw() {
   if (score==60) {
     jogoVenceu=true;
   }
-  teste();
 }
-
- void teste(){
-    
-   teste.desenhaBola(jogador,300,300);
-    teste.colisao(jogador);
-  
-  }
