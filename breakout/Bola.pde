@@ -7,11 +7,11 @@ class Bola {
     this.aceleracaoY = 3;
     this.raio = 10;
   }
-  void desenhaBola(Jogador outro) {
+  void desenhaBola(Jogador outro, float posicaoTemporarioX, float posicaoTemporarioY) {
     noStroke();
     if (naoComecou==true) {
-      this.posicaoBolaX = outro.posicaoJogadorX+50;
-      this.posicaoBolaY = outro.posicaoJogadorY-10;
+      this.posicaoBolaX = posicaoTemporarioX;
+      this.posicaoBolaY = posicaoTemporarioY;
     }
     text(vida, 400, 50);
     fill(255);
