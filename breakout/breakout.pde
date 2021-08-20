@@ -1,5 +1,5 @@
 Jogador jogador = new Jogador();
-BolaEspecial teste = new BolaEspecial(jogador);
+BolaEspecial bolaEspecial = new BolaEspecial();
 Bola bola = new Bola(jogador);
 Barras[][] barras = new Barras[10][7];
 int score, vida;
@@ -27,7 +27,7 @@ void draw() {
         fill(40*contadorJ, 80*contadorJ, 30*contadorJ);
         barras[contador][contadorJ].desenhaBarra();
         barras[contador][contadorJ].colisao(bola);
-        barras[contador][contadorJ].colisao(teste);
+        barras[contador][contadorJ].colisao(bolaEspecial);
       }
     }
   }
@@ -51,9 +51,9 @@ void draw() {
   if (score==60) {
     jogoVenceu=true;
   }
-  teste();
+  especial();
 }
-void teste(){
-  teste.desenhaBola(300, 300);
-  teste.colisao(jogador);
+void especial(){
+  bolaEspecial.desenhaBola(300, 300);
+  bolaEspecial.colisao(jogador);
 }
