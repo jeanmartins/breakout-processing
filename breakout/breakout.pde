@@ -17,7 +17,6 @@ void setup() {
   }
 }
 void draw() {
-  println(random);
   background(0);
   if (jogoAcabou == false) {
     textSize(40);
@@ -44,18 +43,18 @@ void draw() {
     text("Pressione na tela", 150, 380);
     text("para recomeçar", 150, 440);
     if (mousePressed == true) {
-      random = (int)random(1, 2);
+      random = (int)random(1, 10);
       jogoAcabou = false;
       naoComecou = true;
       jogoVenceu = false;
       vida=2;
       score=0;
       bolaEspecial.vidaEspecial = 1;
-      bolaEspecial.posicaoBolaX = random(400, 500);
+      bolaEspecial.posicaoBolaX = random(300, 400);
       bolaEspecial.posicaoBolaY = 300;
     }
   }
-  if (score==60) {
+  if (score>=60) {
     jogoVenceu=true;
   }
   especial();
