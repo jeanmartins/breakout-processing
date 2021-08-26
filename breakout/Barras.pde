@@ -34,7 +34,7 @@ class Barras {
       this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
 
       if ( this.distancia <= outro.raio) {
-        estaVivo = false; 
+        estaVivo = false;
         outro.aceleracaoY = 5;
         score+=1;
         if (testarColisaoY == this.posicaoBarraY) {
@@ -45,7 +45,7 @@ class Barras {
     if (jogoAcabou ==true)
       estaVivo=true;
   }
-  void colisao(BolaEspecial outro,int temp) {
+  void colisao(BolaEspecial outro, int temp) {
     if (estaVivo == true) {
       testarColisaoX = outro.posicaoBolaX;
       testarColisaoY = outro.posicaoBolaY;
@@ -64,7 +64,7 @@ class Barras {
       this.distancia = sqrt(sq(outro.posicaoBolaX - testarColisaoX) + sq(outro.posicaoBolaY - testarColisaoY));
 
       if ( this.distancia <= outro.raio) {
-        estaVivo = false; 
+        estaVivo = false;
         outro.aceleracaoY = 5;
         score+=1+temp;
         if (testarColisaoY == this.posicaoBarraY) {

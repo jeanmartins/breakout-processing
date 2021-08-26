@@ -1,7 +1,7 @@
 class BolaEspecial {
-  float vidaEspecial,posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
+  float vidaEspecial, posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
   BolaEspecial() {
-    this.aceleracaoX = random(8,12);
+    this.aceleracaoX = random(8, 12);
     this.aceleracaoY = 6;
     this.posicaoBolaX = 300;
     this.posicaoBolaY = 300;
@@ -10,19 +10,19 @@ class BolaEspecial {
   }
   void desenhaBola() {
     noStroke();
-    float cor1 = random(0,254);
-    float cor2 = random(0,254);
-    float cor3 = random(0,254);
-    if(vidaEspecial!= 0){
-    if(score>=random){
-    fill(cor1,cor2,cor3);
-    circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
-    moverBola();
+    float cor1 = random(0, 254);
+    float cor2 = random(0, 254);
+    float cor3 = random(0, 254);
+    if (vidaEspecial!= 0) {
+      if (score>=random) {
+        fill(cor1, cor2, cor3);
+        circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
+        moverBola();
+      }
     }
-    }
-    }
-  
-  void moverBola(){
+  }
+
+  void moverBola() {
     this.posicaoBolaX+=this.aceleracaoX;
     if (this.posicaoBolaX >= width) {
       this.aceleracaoX = -5;
@@ -35,7 +35,7 @@ class BolaEspecial {
     if (this.posicaoBolaY >= height) {
       vidaEspecial-=1;
       vida -=1;
-      }
+    }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;
     }

@@ -40,8 +40,8 @@ class Bola {
       naoComecou=true;
     }
     if (vida <=0) {
-        jogoAcabou =true;
-      }
+      jogoAcabou =true;
+    }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;
     }

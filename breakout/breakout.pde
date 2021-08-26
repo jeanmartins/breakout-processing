@@ -30,7 +30,7 @@ void draw() {
         fill(40*contadorJ, 80*contadorJ, 30*contadorJ);
         barras[contador][contadorJ].desenhaBarra();
         barras[contador][contadorJ].colisao(bola);
-        barras[contador][contadorJ].colisao(bolaEspecial,1);
+        barras[contador][contadorJ].colisao(bolaEspecial, 1);
       }
     }
   }
@@ -51,7 +51,7 @@ void draw() {
       vida=2;
       score=0;
       bolaEspecial.vidaEspecial = 1;
-      bolaEspecial.posicaoBolaX = random(400,500);
+      bolaEspecial.posicaoBolaX = random(400, 500);
       bolaEspecial.posicaoBolaY = 300;
     }
   }
