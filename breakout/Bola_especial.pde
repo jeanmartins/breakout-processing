@@ -1,18 +1,23 @@
 class BolaEspecial {
-  float posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
+  float vidaEspecial,posicaoBolaX, posicaoBolaY, aceleracaoX, aceleracaoY, testarColisaoX, testarColisaoY, distancia, raio;
   BolaEspecial() {
-    this.aceleracaoX = 5;
-    this.aceleracaoY = 3;
+    this.aceleracaoX = random(8,12);
+    this.aceleracaoY = 6;
     this.posicaoBolaX = 300;
     this.posicaoBolaY = 300;
     this.raio = 10;
+    this.vidaEspecial = 1;
   }
-  void desenhaBola(float posicaoTempX, float posicaoTempY) {
+  void desenhaBola() {
     noStroke();
-    if(vida != 0){
-    if(score>=2){
+    float cor1 = random(0,254);
+    float cor2 = random(0,254);
+    float cor3 = random(0,254);
+    if(vidaEspecial!= 0){
+    if(score>=random){
+    fill(cor1,cor2,cor3);
     circle(this.posicaoBolaX, this.posicaoBolaY, this.raio*2);
-      moverBola();
+    moverBola();
     }
     }
     }
@@ -28,8 +33,8 @@ class BolaEspecial {
     this.posicaoBolaY+=this.aceleracaoY;
     this.aceleracaoY+= 0.01;
     if (this.posicaoBolaY >= height) {
-      vida-=1;
-      this.posicaoBolaY = 300;
+      vidaEspecial-=1;
+      vida -=1;
       }
     if (this.posicaoBolaY <= 0) {
       this.aceleracaoY = 5;

@@ -45,7 +45,7 @@ class Barras {
     if (jogoAcabou ==true)
       estaVivo=true;
   }
-  void colisao(BolaEspecial outro) {
+  void colisao(BolaEspecial outro,int temp) {
     if (estaVivo == true) {
       testarColisaoX = outro.posicaoBolaX;
       testarColisaoY = outro.posicaoBolaY;
@@ -66,7 +66,7 @@ class Barras {
       if ( this.distancia <= outro.raio) {
         estaVivo = false; 
         outro.aceleracaoY = 5;
-        score+=1;
+        score+=1+temp;
         if (testarColisaoY == this.posicaoBarraY) {
           outro.aceleracaoY = -5;
         }
